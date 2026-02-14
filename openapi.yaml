@@ -1,32 +1,47 @@
 openapi: 3.0.4
 info:
   title: Lottery Numbers
-  description: Lottery Numbers is a simple tool for looking up winning lottery numbers. It returns the winning lottery numbers based on the lottery name provided.
+  description: >-
+    Lottery Numbers is a simple tool for looking up winning lottery numbers. It
+    returns the winning lottery numbers based on the lottery name provided.
+    Supports Powerball, Mega Millions, EuroMillions, and Canada Lotto Max with
+    historical data lookup.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/lottery:
     get:
-      summary: Lookup Winning Mega Millions Numbers
-      description: Lottery Numbers is a simple tool for looking up winning lottery numbers. It returns the winning lottery numbers based on the lottery name provided.
+      summary: Lookup Winning Powerball Numbers
+      description: >-
+        Lookup the winning Powerball numbers (USA). Optionally provide a date
+        for historical results.
       operationId: lottery
       parameters:
-      - name: numbers
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The name of the lottery to lookup the winning numbers (e.g., powerball or megamillions)
-        example: megamillions
+        - name: numbers
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The lottery game to lookup
+          example: powerball
+        - name: date
+          in: query
+          schema:
+            type: string
+          required: false
+          description: >-
+            Optional date for historical lookup (YYYY-MM-DD). Returns the
+            nearest draw to this date.
+          example: '2024-01-15'
       responses:
         '200':
           description: Successful Response
@@ -42,28 +57,29 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
-                  drawDate: 2025-11-11
-                  jackpot: $900 Million
-                  numbers:
-                  - 10
-                  - 13
-                  - 40
-                  - 42
-                  - 46
-                  - 1
                   lotteryType: megamillions
+                  drawDate: '2026-02-04'
+                  numbers:
+                    - 10
+                    - 50
+                    - 55
+                    - 58
+                    - 59
+                    - 5
+                  megaBall: 5
+                  jackpot: $70 Million
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -71,4 +87,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
