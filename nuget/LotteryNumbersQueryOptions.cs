@@ -11,10 +11,15 @@ namespace APIVerve.API.LotteryNumbers
     public class LotteryNumbersQueryOptions
     {
         /// <summary>
-        /// The name of the lottery to lookup the winning numbers (e.g., powerball or megamillions)
-        /// Example: megamillions
+        /// The lottery game to lookup
         /// </summary>
         [JsonProperty("numbers")]
         public string Numbers { get; set; }
+
+        /// <summary>
+        /// Optional date for historical lookup (YYYY-MM-DD). Returns the nearest draw to this date.
+        /// </summary>
+        [JsonProperty("date")]
+        public string Date { get; set; }
     }
 }
