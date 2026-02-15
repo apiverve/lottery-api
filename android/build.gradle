@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.apiverve'
-version = '1.1.12'
+version = '1.1.13'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -20,13 +20,13 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.apiverve'
             artifactId = 'lottery-api'
-            version = '1.1.12'
+            version = '1.1.13'
 
             from components.java
 
             pom {
                 name = 'Lottery Numbers'
-                description = 'Lottery Numbers is a simple tool for looking up winning lottery numbers. It returns the winning lottery numbers based on the lottery name provided.'
+                description = 'Lottery Numbers is a simple tool for looking up winning lottery numbers. It returns the winning lottery numbers based on the lottery name provided. Supports Powerball, Mega Millions, EuroMillions, and Canada Lotto Max with historical data lookup.'
                 url = 'https://apiverve.com'
 
                 licenses {
