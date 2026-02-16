@@ -44,7 +44,10 @@ from apiverve_lotterynumbers.apiClient import LotteryAPIClient
 # Initialize the client with your APIVerve API key
 api = LotteryAPIClient("[YOUR_API_KEY]")
 
-query = { "numbers": "powerball", "date": "2024-01-15" }
+query = {
+    "numbers": "powerball",
+    "date": "2024-01-15"
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "numbers": "powerball", "date": "2024-01-15" }
+query = {
+    "numbers": "powerball",
+    "date": "2024-01-15"
+}
 ```
 
 ###### Simple Request
@@ -130,7 +136,10 @@ from apiverve_lotterynumbers.apiClient import LotteryAPIClient, LotteryAPIClient
 
 api = LotteryAPIClient("[YOUR_API_KEY]")
 
-query = { "numbers": "powerball", "date": "2024-01-15" }
+query = {
+    "numbers": "powerball",
+    "date": "2024-01-15"
+}
 
 try:
     result = api.execute(query)
@@ -151,7 +160,10 @@ from apiverve_lotterynumbers.apiClient import LotteryAPIClient, LotteryAPIClient
 
 api = LotteryAPIClient("[YOUR_API_KEY]")
 
-query = { "numbers": "powerball", "date": "2024-01-15" }
+query = {
+    "numbers": "powerball",
+    "date": "2024-01-15"
+}
 
 try:
     result = api.execute(query)
@@ -185,7 +197,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_lotterynumbers.apiClient import LotteryAPIClient, LotteryAPIClientError
 
-query = { "numbers": "powerball", "date": "2024-01-15" }
+query = {
+    "numbers": "powerball",
+    "date": "2024-01-15"
+}
 
 # Using context manager ensures proper cleanup
 with LotteryAPIClient("[YOUR_API_KEY]") as api:
@@ -211,7 +226,10 @@ from apiverve_lotterynumbers.apiClient import LotteryAPIClient
 # Enable debug mode
 api = LotteryAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "numbers": "powerball", "date": "2024-01-15" }
+query = {
+    "numbers": "powerball",
+    "date": "2024-01-15"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -226,8 +244,12 @@ from apiverve_lotterynumbers.apiClient import LotteryAPIClient
 
 api = LotteryAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "numbers": "powerball",
+    "date": "2024-01-15"
+}
+
 try:
-    query = { "numbers": "powerball", "date": "2024-01-15" }
     result = api.execute(query)
     print(result)
 finally:
