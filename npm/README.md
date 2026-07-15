@@ -7,7 +7,7 @@ Lottery Numbers is a simple tool for looking up winning lottery numbers. It retu
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/lottery.svg)](https://www.npmjs.com/package/@apiverve/lottery)
 
-This is a Javascript Wrapper for the [Lottery Numbers API](https://apiverve.com/marketplace/lottery?utm_source=npm&utm_medium=readme)
+This is a Javascript Wrapper for the [Lottery Numbers API](https://lottery.apiverve.com?utm_source=npm&utm_medium=readme)
 
 ---
 
@@ -125,17 +125,18 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "drawDate": "2025-11-11",
-    "jackpot": "$900 Million",
+    "lotteryType": "megamillions",
+    "drawDate": "2026-02-04",
     "numbers": [
       10,
-      13,
-      40,
-      42,
-      46,
-      1
+      50,
+      55,
+      58,
+      59,
+      5
     ],
-    "lotteryType": "megamillions"
+    "megaBall": 5,
+    "jackpot": "$70 Million"
   }
 }
 ```
