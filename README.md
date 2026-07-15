@@ -1,13 +1,13 @@
-# [Lottery Numbers API](https://apiverve.com/marketplace/lottery?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Lottery Numbers API](https://lottery.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 
 Lottery Numbers is a simple tool for looking up winning lottery numbers. It returns the winning lottery numbers based on the lottery name provided. Supports Powerball, Mega Millions, EuroMillions, and Canada Lotto Max with historical data lookup.
 
 The Lottery Numbers API provides a simple, reliable way to integrate lottery numbers functionality into your applications. Built for developers who need production-ready lottery numbers capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/lottery?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://lottery.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/lottery?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://lottery.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -30,7 +30,11 @@ The Lottery Numbers API provides a simple, reliable way to integrate lottery num
 ```javascript
 async function callLotteryNumbersAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/lottery', {
+        const params = new URLSearchParams({
+            numbers: 'powerball'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/lottery?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +54,7 @@ callLotteryNumbersAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/lottery?param=value" \
+curl -X GET "https://api.apiverve.com/v1/lottery?numbers=powerball" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,14 +154,14 @@ go get github.com/apiverve/lottery-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
 
 ## Documentation
 
-- 🏠 **API Home:** [Lottery Numbers API](https://apiverve.com/marketplace/lottery?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Lottery Numbers API](https://lottery.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/lottery](https://docs.apiverve.com/ref/lottery)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -169,7 +173,7 @@ go get github.com/apiverve/lottery-api/go
 The Lottery Numbers API is commonly used for:
 
 - **Web Applications** - Add lottery numbers features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with lottery numbers capabilities
 - **Data Pipelines** - Process and analyze data at scale
@@ -199,7 +203,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Lottery Numbers API](https://apiverve.com/marketplace/lottery?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Lottery Numbers API](https://lottery.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
