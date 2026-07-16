@@ -7,7 +7,7 @@ Lottery Numbers is a simple tool for looking up winning lottery numbers. It retu
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [LotteryNumbers API](https://apiverve.com/marketplace/lottery?utm_source=nuget&utm_medium=readme)
+This is a .NET Wrapper for the [LotteryNumbers API](https://lottery.apiverve.com?utm_source=nuget&utm_medium=readme)
 
 ---
 
@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.LotteryNumbers;
 
 class Program
 {
@@ -60,9 +60,9 @@ class Program
         // Initialize the API client
         var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    numbers = "powerball",
-    date = "2024-01-15"
+        var queryOptions = new LotteryNumbersQueryOptions {
+    Numbers = "powerball",
+    Date = "2024-01-15"
 };
 
         // Make the API call
@@ -117,7 +117,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.LotteryNumbers;
 
 public class Example
 {
@@ -125,9 +125,9 @@ public class Example
     {
         var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    numbers = "powerball",
-    date = "2024-01-15"
+        var queryOptions = new LotteryNumbersQueryOptions {
+    Numbers = "powerball",
+    Date = "2024-01-15"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -150,7 +150,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.LotteryNumbers;
 
 public class Example
 {
@@ -158,9 +158,9 @@ public class Example
     {
         var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    numbers = "powerball",
-    date = "2024-01-15"
+        var queryOptions = new LotteryNumbersQueryOptions {
+    Numbers = "powerball",
+    Date = "2024-01-15"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -188,7 +188,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.LotteryNumbers;
 
 public class Example
 {
@@ -196,9 +196,9 @@ public class Example
     {
         var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    numbers = "powerball",
-    date = "2024-01-15"
+        var queryOptions = new LotteryNumbersQueryOptions {
+    Numbers = "powerball",
+    Date = "2024-01-15"
 };
 
         try
@@ -241,7 +241,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.LotteryNumbers;
 
 public class Example
 {
@@ -253,9 +253,9 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    numbers = "powerball",
-    date = "2024-01-15"
+        var queryOptions = new LotteryNumbersQueryOptions {
+    Numbers = "powerball",
+    Date = "2024-01-15"
 };
 
         try
@@ -295,9 +295,9 @@ var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    numbers = "powerball",
-    date = "2024-01-15"
+var queryOptions = new LotteryNumbersQueryOptions {
+    Numbers = "powerball",
+    Date = "2024-01-15"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -322,9 +322,9 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    numbers = "powerball",
-    date = "2024-01-15"
+var queryOptions = new LotteryNumbersQueryOptions {
+    Numbers = "powerball",
+    Date = "2024-01-15"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -341,9 +341,9 @@ var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    numbers = "powerball",
-    date = "2024-01-15"
+var queryOptions = new LotteryNumbersQueryOptions {
+    Numbers = "powerball",
+    Date = "2024-01-15"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -354,9 +354,9 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    numbers = "powerball",
-    date = "2024-01-15"
+var queryOptions = new LotteryNumbersQueryOptions {
+    Numbers = "powerball",
+    Date = "2024-01-15"
 };
 
 using (var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]"))
@@ -376,17 +376,18 @@ using (var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "drawDate": "2025-11-11",
-    "jackpot": "$900 Million",
+    "lotteryType": "megamillions",
+    "drawDate": "2026-02-04",
     "numbers": [
       10,
-      13,
-      40,
-      42,
-      46,
-      1
+      50,
+      55,
+      58,
+      59,
+      5
     ],
-    "lotteryType": "megamillions"
+    "megaBall": 5,
+    "jackpot": "$70 Million"
   }
 }
 ```
