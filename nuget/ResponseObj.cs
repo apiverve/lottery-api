@@ -25,20 +25,38 @@ namespace APIVerve.API.LotteryNumbers
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
+        [JsonProperty("lotteryType")]
+        public string LotteryType { get; set; }
+
         [JsonProperty("drawDate")]
-        public DateTimeOffset DrawDate { get; set; }
+        public DateTimeOffset? DrawDate { get; set; }
+
+        [JsonProperty("numbers")]
+        public long?[] Numbers { get; set; }
+
+        [JsonProperty("megaBall")]
+        public long? MegaBall { get; set; }
 
         [JsonProperty("jackpot")]
         public string Jackpot { get; set; }
+    }
 
-        [JsonProperty("numbers")]
-        public long[] Numbers { get; set; }
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
 
-        [JsonProperty("lotteryType")]
-        public string LotteryType { get; set; }
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
