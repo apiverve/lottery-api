@@ -11,7 +11,7 @@ namespace APIVerve.API.LotteryNumbers
     public class LotteryNumbersQueryOptions
     {
         /// <summary>
-        /// The lottery game to lookup
+        /// The lottery game to lookup: powerball, megamillions, euromillions, or lottomax
         /// </summary>
         [JsonProperty("numbers")]
         public string Numbers { get; set; }

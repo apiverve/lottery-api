@@ -1,13 +1,12 @@
-LotteryNumbers API
+Lottery Numbers API
 ============
 
-Lottery Numbers is a simple tool for looking up winning lottery numbers. It returns the winning lottery numbers based on the lottery name provided. Supports Powerball, Mega Millions, EuroMillions, and Canada Lotto Max with historical data lookup.
+Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [LotteryNumbers API](https://lottery.apiverve.com?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.LotteryNumbers.svg)](https://www.nuget.org/packages/APIVerve.API.LotteryNumbers)
+
+This is a .NET wrapper for the [Lottery Numbers API](https://apiverve.com/marketplace/lottery?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the lottery API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Lottery Numbers API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,9 +60,9 @@ class Program
         var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new LotteryNumbersQueryOptions {
-    Numbers = "powerball",
-    Date = "2024-01-15"
-};
+            Numbers = "powerball",
+            Date = "2024-01-15"
+        };
 
         // Make the API call
         try
@@ -93,13 +92,13 @@ class Program
 
 ## Usage
 
-The LotteryNumbers API documentation is found here: [https://docs.apiverve.com/ref/lottery](https://docs.apiverve.com/ref/lottery?utm_source=nuget&utm_medium=readme).
+The Lottery Numbers API documentation is found here: [https://docs.apiverve.com/ref/lottery](https://docs.apiverve.com/ref/lottery?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-LotteryNumbers API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Lottery Numbers API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -126,9 +125,9 @@ public class Example
         var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new LotteryNumbersQueryOptions {
-    Numbers = "powerball",
-    Date = "2024-01-15"
-};
+            Numbers = "powerball",
+            Date = "2024-01-15"
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -159,9 +158,9 @@ public class Example
         var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new LotteryNumbersQueryOptions {
-    Numbers = "powerball",
-    Date = "2024-01-15"
-};
+            Numbers = "powerball",
+            Date = "2024-01-15"
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -197,9 +196,9 @@ public class Example
         var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new LotteryNumbersQueryOptions {
-    Numbers = "powerball",
-    Date = "2024-01-15"
-};
+            Numbers = "powerball",
+            Date = "2024-01-15"
+        };
 
         try
         {
@@ -254,9 +253,9 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new LotteryNumbersQueryOptions {
-    Numbers = "powerball",
-    Date = "2024-01-15"
-};
+            Numbers = "powerball",
+            Date = "2024-01-15"
+        };
 
         try
         {
@@ -387,7 +386,16 @@ using (var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]"))
       5
     ],
     "megaBall": 5,
-    "jackpot": "$70 Million"
+    "jackpot": "$70 Million",
+    "jackpotValue": 70000000,
+    "jackpotFormatted": "$70 Million",
+    "nextDraw": {
+      "drawDate": "2026-02-07",
+      "jackpot": "$82 Million",
+      "jackpotValue": 82000000,
+      "cashValue": "$37.2 Million",
+      "cashValueValue": 37200000
+    }
   }
 }
 ```
@@ -396,7 +404,7 @@ using (var apiClient = new LotteryNumbersAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -407,12 +415,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

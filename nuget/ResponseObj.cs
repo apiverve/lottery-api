@@ -46,6 +46,33 @@ namespace APIVerve.API.LotteryNumbers
 
         [JsonProperty("jackpot")]
         public string Jackpot { get; set; }
+
+        [JsonProperty("jackpotValue")]
+        public long? JackpotValue { get; set; }
+
+        [JsonProperty("jackpotFormatted")]
+        public string JackpotFormatted { get; set; }
+
+        [JsonProperty("nextDraw")]
+        public NextDraw NextDraw { get; set; }
+    }
+
+    public partial class NextDraw
+    {
+        [JsonProperty("drawDate")]
+        public DateTimeOffset? DrawDate { get; set; }
+
+        [JsonProperty("jackpot")]
+        public string Jackpot { get; set; }
+
+        [JsonProperty("jackpotValue")]
+        public long? JackpotValue { get; set; }
+
+        [JsonProperty("cashValue")]
+        public string CashValue { get; set; }
+
+        [JsonProperty("cashValueValue")]
+        public long? CashValueValue { get; set; }
     }
 
     public partial class Premium
