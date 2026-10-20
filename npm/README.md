@@ -1,13 +1,10 @@
 # Lottery Numbers API
 
-Lottery Numbers is a simple tool for looking up winning lottery numbers. It returns the winning lottery numbers based on the lottery name provided. Supports Powerball, Mega Millions, EuroMillions, and Canada Lotto Max with historical data lookup.
+Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/lottery.svg)](https://www.npmjs.com/package/@apiverve/lottery)
 
-This is a Javascript Wrapper for the [Lottery Numbers API](https://lottery.apiverve.com?utm_source=npm&utm_medium=readme)
+This is a JavaScript wrapper for the [Lottery Numbers API](https://apiverve.com/marketplace/lottery?utm_source=npm&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -28,15 +25,15 @@ yarn add @apiverve/lottery
 ## Configuration
 
 Before using the Lottery Numbers API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=npm&utm_medium=readme)
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=npm&utm_medium=referral&utm_content=readme)
 
 ---
 
 ## Quick Start
 
-[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart?utm_source=npm&utm_medium=readme)
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart?utm_source=npm&utm_medium=referral&utm_content=readme)
 
-The Lottery Numbers API documentation is found here: [https://docs.apiverve.com/ref/lottery](https://docs.apiverve.com/ref/lottery?utm_source=npm&utm_medium=readme).
+The Lottery Numbers API documentation is found here: [https://docs.apiverve.com/ref/lottery](https://docs.apiverve.com/ref/lottery?utm_source=npm&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -136,7 +133,16 @@ async function makeRequest() {
       5
     ],
     "megaBall": 5,
-    "jackpot": "$70 Million"
+    "jackpot": "$70 Million",
+    "jackpotValue": 70000000,
+    "jackpotFormatted": "$70 Million",
+    "nextDraw": {
+      "drawDate": "2026-02-07",
+      "jackpot": "$82 Million",
+      "jackpotValue": 82000000,
+      "cashValue": "$37.2 Million",
+      "cashValueValue": 37200000
+    }
   }
 }
 ```
@@ -145,7 +151,7 @@ async function makeRequest() {
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=npm&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=npm&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -157,12 +163,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=npm&utm_medium=readme), [Privacy Policy](https://apiverve.com/privacy?utm_source=npm&utm_medium=readme), and [Refund Policy](https://apiverve.com/refund?utm_source=npm&utm_medium=readme).
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=npm&utm_medium=referral&utm_content=readme) and [Privacy Policy](https://apiverve.com/privacy?utm_source=npm&utm_medium=referral&utm_content=readme).
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

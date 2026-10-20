@@ -25,11 +25,22 @@ declare module '@apiverve/lottery' {
 
 
   interface LotteryNumbersData {
-      lotteryType: null | string;
-      drawDate:    Date | null;
-      numbers:     (number | null)[];
-      megaBall:    number | null;
-      jackpot:     null | string;
+      lotteryType:      null | string;
+      drawDate:         Date | null;
+      numbers:          (number | null)[];
+      megaBall:         number | null;
+      jackpot:          null | string;
+      jackpotValue:     number | null;
+      jackpotFormatted: null | string;
+      nextDraw:         NextDraw;
+  }
+  
+  interface NextDraw {
+      drawDate:       Date | null;
+      jackpot:        null | string;
+      jackpotValue:   number | null;
+      cashValue:      null | string;
+      cashValueValue: number | null;
   }
 
   export default class lotteryWrapper {
