@@ -2,10 +2,9 @@ openapi: 3.0.4
 info:
   title: Lottery Numbers
   description: >-
-    Lottery Numbers is a simple tool for looking up winning lottery numbers. It
-    returns the winning lottery numbers based on the lottery name provided.
-    Supports Powerball, Mega Millions, EuroMillions, and Canada Lotto Max with
-    historical data lookup.
+    Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates,
+    and jackpot amounts for major games. Specify Powerball, Mega Millions,
+    EuroMillions, or Lotto Max to receive draw results with prize totals.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -20,10 +19,11 @@ servers:
 paths:
   /v1/lottery:
     get:
-      summary: Lookup Winning Powerball Numbers
+      summary: Lottery Numbers
       description: >-
-        Lookup the winning Powerball numbers (USA). Optionally provide a date
-        for historical results.
+        Lookup the latest winning lottery numbers for Powerball, Mega Millions,
+        EuroMillions, or Lotto Max — pick the game with the numbers parameter.
+        Optionally provide a date for historical results.
       operationId: lottery
       parameters:
         - name: numbers
@@ -31,7 +31,9 @@ paths:
           schema:
             type: string
           required: true
-          description: The lottery game to lookup
+          description: >-
+            The lottery game to lookup: powerball, megamillions, euromillions,
+            or lottomax
           example: powerball
         - name: date
           in: query
@@ -74,6 +76,14 @@ paths:
                     - 5
                   megaBall: 5
                   jackpot: $70 Million
+                  jackpotValue: 70000000
+                  jackpotFormatted: $70 Million
+                  nextDraw:
+                    drawDate: '2026-02-07'
+                    jackpot: $82 Million
+                    jackpotValue: 82000000
+                    cashValue: $37.2 Million
+                    cashValueValue: 37200000
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
