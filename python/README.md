@@ -1,13 +1,12 @@
 Lottery Numbers API
 ============
 
-Lottery Numbers is a simple tool for looking up winning lottery numbers. It returns the winning lottery numbers based on the lottery name provided. Supports Powerball, Mega Millions, EuroMillions, and Canada Lotto Max with historical data lookup.
+Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Lottery Numbers API](https://apiverve.com/marketplace/lottery?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-lotterynumbers.svg)](https://pypi.org/project/apiverve-lotterynumbers/)
+
+This is a Python wrapper for the [Lottery Numbers API](https://apiverve.com/marketplace/lottery?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-lotterynumbers
 
 ## Configuration
 
-Before using the lottery API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Lottery Numbers API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -63,7 +62,7 @@ except Exception as e:
 
 ## Usage
 
-The Lottery Numbers API documentation is found here: [https://docs.apiverve.com/ref/lottery](https://docs.apiverve.com/ref/lottery?utm_source=pypi&utm_medium=readme).
+The Lottery Numbers API documentation is found here: [https://docs.apiverve.com/ref/lottery](https://docs.apiverve.com/ref/lottery?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -108,17 +107,27 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "drawDate": "2025-11-11",
-    "jackpot": "$900 Million",
+    "lotteryType": "megamillions",
+    "drawDate": "2026-02-04",
     "numbers": [
       10,
-      13,
-      40,
-      42,
-      46,
-      1
+      50,
+      55,
+      58,
+      59,
+      5
     ],
-    "lotteryType": "megamillions"
+    "megaBall": 5,
+    "jackpot": "$70 Million",
+    "jackpotValue": 70000000,
+    "jackpotFormatted": "$70 Million",
+    "nextDraw": {
+      "drawDate": "2026-02-07",
+      "jackpot": "$82 Million",
+      "jackpotValue": 82000000,
+      "cashValue": "$37.2 Million",
+      "cashValueValue": 37200000
+    }
   }
 }
 ```
@@ -261,7 +270,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -272,12 +281,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
