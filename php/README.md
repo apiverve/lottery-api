@@ -1,6 +1,6 @@
 # Lottery Numbers API - PHP Package
 
-Lottery Numbers is a simple tool for looking up winning lottery numbers. It returns the winning lottery numbers based on the lottery name provided. Supports Powerball, Mega Millions, EuroMillions, and Canada Lotto Max with historical data lookup.
+Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals.
 
 ## Installation
 
@@ -83,7 +83,16 @@ $client = new Client(
       5
     ],
     "megaBall": 5,
-    "jackpot": "$70 Million"
+    "jackpot": "$70 Million",
+    "jackpotValue": 70000000,
+    "jackpotFormatted": "$70 Million",
+    "nextDraw": {
+      "drawDate": "2026-02-07",
+      "jackpot": "$82 Million",
+      "jackpotValue": 82000000,
+      "cashValue": "$37.2 Million",
+      "cashValueValue": 37200000
+    }
   }
 }
 ```
@@ -95,11 +104,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/lottery?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/lottery?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://lottery.apiverve.com?utm_source=php&utm_medium=readme](https://lottery.apiverve.com?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/lottery?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/lottery?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
