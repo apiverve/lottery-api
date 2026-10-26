@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/lottery",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals.",
   "main": "index.js",
   "types": "index.d.ts",
