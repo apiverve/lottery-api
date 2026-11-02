@@ -1,6 +1,6 @@
 # [Lottery Numbers API](https://apiverve.com/marketplace/lottery?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals.
+Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals, and on paid plans the next draw&#x27;s estimate and number frequency statistics from the last 100 draws.
 
 The Lottery Numbers API provides a simple, reliable way to integrate lottery numbers functionality into your applications. Built for developers who need production-ready lottery numbers capabilities without the complexity of building from scratch.
 
@@ -211,26 +211,116 @@ A real response from the Lottery Numbers API:
   "status": "ok",
   "error": null,
   "data": {
-    "lotteryType": "megamillions",
-    "drawDate": "2026-02-04",
+    "drawDate": "2026-10-26",
     "numbers": [
-      10,
+      18,
+      26,
+      49,
       50,
-      55,
-      58,
-      59,
-      5
+      54,
+      1
     ],
-    "megaBall": 5,
-    "jackpot": "$70 Million",
-    "jackpotValue": 70000000,
-    "jackpotFormatted": "$70 Million",
+    "powerball": 1,
+    "jackpot": "$691 Million",
+    "jackpotValue": 691000000,
+    "jackpotFormatted": "$691 Million",
+    "lotteryType": "powerball",
     "nextDraw": {
-      "drawDate": "2026-02-07",
-      "jackpot": "$82 Million",
-      "jackpotValue": 82000000,
-      "cashValue": "$37.2 Million",
-      "cashValueValue": 37200000
+      "drawDate": "2026-10-28",
+      "jackpot": "$716 Million",
+      "jackpotValue": 716000000,
+      "jackpotFormatted": "$716 Million",
+      "cashValue": "$307.2 Million",
+      "cashValueValue": 307200000
+    },
+    "stats": {
+      "drawsAnalyzed": 100,
+      "since": "2026-03-09",
+      "hotNumbers": [
+        {
+          "number": 42,
+          "timesDrawn": 13
+        },
+        {
+          "number": 3,
+          "timesDrawn": 12
+        },
+        {
+          "number": 64,
+          "timesDrawn": 12
+        },
+        {
+          "number": 4,
+          "timesDrawn": 11
+        },
+        {
+          "number": 14,
+          "timesDrawn": 11
+        }
+      ],
+      "coldNumbers": [
+        {
+          "number": 1,
+          "timesDrawn": 3
+        },
+        {
+          "number": 34,
+          "timesDrawn": 3
+        },
+        {
+          "number": 39,
+          "timesDrawn": 3
+        },
+        {
+          "number": 62,
+          "timesDrawn": 3
+        },
+        {
+          "number": 20,
+          "timesDrawn": 4
+        }
+      ],
+      "hotBonusNumbers": [
+        {
+          "number": 3,
+          "timesDrawn": 8
+        },
+        {
+          "number": 14,
+          "timesDrawn": 7
+        },
+        {
+          "number": 1,
+          "timesDrawn": 6
+        }
+      ],
+      "drawNumbers": [
+        {
+          "number": 18,
+          "timesDrawn": 8,
+          "drawsSinceLast": 16
+        },
+        {
+          "number": 26,
+          "timesDrawn": 6,
+          "drawsSinceLast": 14
+        },
+        {
+          "number": 49,
+          "timesDrawn": 8,
+          "drawsSinceLast": 12
+        },
+        {
+          "number": 50,
+          "timesDrawn": 10,
+          "drawsSinceLast": 2
+        },
+        {
+          "number": 54,
+          "timesDrawn": 7,
+          "drawsSinceLast": 9
+        }
+      ]
     }
   }
 }
