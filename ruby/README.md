@@ -1,6 +1,6 @@
 # Lottery Numbers API - Ruby Gem
 
-Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals.
+Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals, and on paid plans the next draw's estimate and number frequency statistics from the last 100 draws.
 
 ## Installation
 
@@ -37,7 +37,8 @@ client = APIVerve::Lottery::Client.new(api_key: "YOUR_API_KEY")
 # Make a request
 response = client.execute({
   numbers: "powerball",
-  date: "2024-01-15"
+  date: "2024-01-15",
+  stats: true
 })
 
 # Print the response
@@ -49,7 +50,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ numbers: "powerball", date: "2024-01-15" })
+  response = client.execute({ numbers: "powerball", date: "2024-01-15", stats: true })
   puts response["data"]
 rescue APIVerve::Lottery::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"
@@ -76,26 +77,116 @@ client = APIVerve::Lottery::Client.new(
   "status": "ok",
   "error": null,
   "data": {
-    "lotteryType": "megamillions",
-    "drawDate": "2026-02-04",
+    "drawDate": "2026-10-26",
     "numbers": [
-      10,
+      18,
+      26,
+      49,
       50,
-      55,
-      58,
-      59,
-      5
+      54,
+      1
     ],
-    "megaBall": 5,
-    "jackpot": "$70 Million",
-    "jackpotValue": 70000000,
-    "jackpotFormatted": "$70 Million",
+    "powerball": 1,
+    "jackpot": "$691 Million",
+    "jackpotValue": 691000000,
+    "jackpotFormatted": "$691 Million",
+    "lotteryType": "powerball",
     "nextDraw": {
-      "drawDate": "2026-02-07",
-      "jackpot": "$82 Million",
-      "jackpotValue": 82000000,
-      "cashValue": "$37.2 Million",
-      "cashValueValue": 37200000
+      "drawDate": "2026-10-28",
+      "jackpot": "$716 Million",
+      "jackpotValue": 716000000,
+      "jackpotFormatted": "$716 Million",
+      "cashValue": "$307.2 Million",
+      "cashValueValue": 307200000
+    },
+    "stats": {
+      "drawsAnalyzed": 100,
+      "since": "2026-03-09",
+      "hotNumbers": [
+        {
+          "number": 42,
+          "timesDrawn": 13
+        },
+        {
+          "number": 3,
+          "timesDrawn": 12
+        },
+        {
+          "number": 64,
+          "timesDrawn": 12
+        },
+        {
+          "number": 4,
+          "timesDrawn": 11
+        },
+        {
+          "number": 14,
+          "timesDrawn": 11
+        }
+      ],
+      "coldNumbers": [
+        {
+          "number": 1,
+          "timesDrawn": 3
+        },
+        {
+          "number": 34,
+          "timesDrawn": 3
+        },
+        {
+          "number": 39,
+          "timesDrawn": 3
+        },
+        {
+          "number": 62,
+          "timesDrawn": 3
+        },
+        {
+          "number": 20,
+          "timesDrawn": 4
+        }
+      ],
+      "hotBonusNumbers": [
+        {
+          "number": 3,
+          "timesDrawn": 8
+        },
+        {
+          "number": 14,
+          "timesDrawn": 7
+        },
+        {
+          "number": 1,
+          "timesDrawn": 6
+        }
+      ],
+      "drawNumbers": [
+        {
+          "number": 18,
+          "timesDrawn": 8,
+          "drawsSinceLast": 16
+        },
+        {
+          "number": 26,
+          "timesDrawn": 6,
+          "drawsSinceLast": 14
+        },
+        {
+          "number": 49,
+          "timesDrawn": 8,
+          "drawsSinceLast": 12
+        },
+        {
+          "number": 50,
+          "timesDrawn": 10,
+          "drawsSinceLast": 2
+        },
+        {
+          "number": 54,
+          "timesDrawn": 7,
+          "drawsSinceLast": 9
+        }
+      ]
     }
   }
 }

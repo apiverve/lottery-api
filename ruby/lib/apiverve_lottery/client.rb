@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Lottery::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ numbers: "powerball", date: "2024-01-15" })
+    #   response = client.execute({ numbers: "powerball", date: "2024-01-15", stats: true })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/lottery?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'numbers' => { type: 'string', required: true }, 'date' => { type: 'string', required: false, format: 'date' } }
+      VALIDATION_RULES = { 'numbers' => { type: 'string', required: true }, 'date' => { type: 'string', required: false, format: 'date' }, 'stats' => { type: 'boolean', required: false } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {

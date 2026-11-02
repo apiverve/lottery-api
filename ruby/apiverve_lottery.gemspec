@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "apiverve_lottery"
-  spec.version       = "1.2.3"
+  spec.version       = "1.2.4"
   spec.authors       = ["APIVerve"]
   spec.email         = ["hello@apiverve.com"]
 
   spec.summary       = "Lottery Numbers API - Ruby Client"
-  spec.description   = "Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals."
+  spec.description   = "Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals, and on paid plans the next draw's estimate and number frequency statistics from the last 100 draws."
   spec.homepage      = "https://apiverve.com/marketplace/lottery?utm_source=ruby&utm_medium=referral&utm_content=homepage"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
