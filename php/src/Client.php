@@ -15,7 +15,7 @@ use APIVerve\Lottery\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['numbers' => 'powerball', 'date' => '2024-01-15']);
+ * $response = $client->execute(['numbers' => 'powerball', 'date' => '2024-01-15', 'stats' => true]);
  * print_r($response);
  * ```
  *
@@ -35,7 +35,8 @@ class Client
      */
     private const VALIDATION_RULES = [
         'numbers' => ['type' => 'string', 'required' => true],
-        'date' => ['type' => 'string', 'required' => false, 'format' => 'date']
+        'date' => ['type' => 'string', 'required' => false, 'format' => 'date'],
+        'stats' => ['type' => 'boolean', 'required' => false]
     ];
 
     /**
