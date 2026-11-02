@@ -30,7 +30,7 @@ class lotteryWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/lottery';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"numbers":{"type":"string","required":true},"date":{"type":"string","required":false,"format":"date"}};
+        this.validationRules = {"numbers":{"type":"string","required":true},"date":{"type":"string","required":false,"format":"date"},"stats":{"type":"boolean","required":false,"default":false}};
     }
 
     /**

@@ -16,7 +16,8 @@ const api = new lotteryAPI({
 // Example query
 var query = {
   numbers: "powerball",
-  date: "2024-01-15"
+  date: "2024-01-15",
+  stats: false
 };
 
 // Make the API request using callback
