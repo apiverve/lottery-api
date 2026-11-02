@@ -68,7 +68,8 @@ namespace APIVerve.API.LotteryNumbers
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
             { "numbers", new ValidationRule { Type = "string", Required = true } },
-            { "date", new ValidationRule { Type = "string", Required = false, Format = "date" } }
+            { "date", new ValidationRule { Type = "string", Required = false, Format = "date" } },
+            { "stats", new ValidationRule { Type = "boolean", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>

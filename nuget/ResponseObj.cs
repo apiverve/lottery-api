@@ -32,17 +32,14 @@ namespace APIVerve.API.LotteryNumbers
 
     public partial class Data
     {
-        [JsonProperty("lotteryType")]
-        public string LotteryType { get; set; }
-
         [JsonProperty("drawDate")]
         public DateTimeOffset? DrawDate { get; set; }
 
         [JsonProperty("numbers")]
         public long?[] Numbers { get; set; }
 
-        [JsonProperty("megaBall")]
-        public long? MegaBall { get; set; }
+        [JsonProperty("powerball")]
+        public long? Powerball { get; set; }
 
         [JsonProperty("jackpot")]
         public string Jackpot { get; set; }
@@ -53,8 +50,14 @@ namespace APIVerve.API.LotteryNumbers
         [JsonProperty("jackpotFormatted")]
         public string JackpotFormatted { get; set; }
 
+        [JsonProperty("lotteryType")]
+        public string LotteryType { get; set; }
+
         [JsonProperty("nextDraw")]
         public NextDraw NextDraw { get; set; }
+
+        [JsonProperty("stats")]
+        public Stats Stats { get; set; }
     }
 
     public partial class NextDraw
@@ -68,11 +71,56 @@ namespace APIVerve.API.LotteryNumbers
         [JsonProperty("jackpotValue")]
         public long? JackpotValue { get; set; }
 
+        [JsonProperty("jackpotFormatted")]
+        public string JackpotFormatted { get; set; }
+
         [JsonProperty("cashValue")]
         public string CashValue { get; set; }
 
         [JsonProperty("cashValueValue")]
         public long? CashValueValue { get; set; }
+    }
+
+    public partial class Stats
+    {
+        [JsonProperty("drawsAnalyzed")]
+        public long? DrawsAnalyzed { get; set; }
+
+        [JsonProperty("since")]
+        public DateTimeOffset? Since { get; set; }
+
+        [JsonProperty("hotNumbers")]
+        public Number[] HotNumbers { get; set; }
+
+        [JsonProperty("coldNumbers")]
+        public Number[] ColdNumbers { get; set; }
+
+        [JsonProperty("hotBonusNumbers")]
+        public Number[] HotBonusNumbers { get; set; }
+
+        [JsonProperty("drawNumbers")]
+        public DrawNumber[] DrawNumbers { get; set; }
+    }
+
+    public partial class Number
+    {
+        [JsonProperty("number")]
+        public long? NumberNumber { get; set; }
+
+        [JsonProperty("timesDrawn")]
+        public long? TimesDrawn { get; set; }
+    }
+
+    public partial class DrawNumber
+    {
+        [JsonProperty("number")]
+        public long? Number { get; set; }
+
+        [JsonProperty("timesDrawn")]
+        public long? TimesDrawn { get; set; }
+
+        [JsonProperty("drawsSinceLast")]
+        public long? DrawsSinceLast { get; set; }
     }
 
     public partial class Premium

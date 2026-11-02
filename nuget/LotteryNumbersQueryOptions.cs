@@ -21,5 +21,11 @@ namespace APIVerve.API.LotteryNumbers
         /// </summary>
         [JsonProperty("date")]
         public string Date { get; set; }
+
+        /// <summary>
+        /// Include number frequency statistics over the last 100 draws
+        /// </summary>
+        [JsonProperty("stats")]
+        public bool? Stats { get; set; }
     }
 }
