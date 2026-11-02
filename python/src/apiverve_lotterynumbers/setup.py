@@ -10,11 +10,11 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_lotterynumbers',
-    version='1.2.3',
+    version='1.2.4',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
-    description='Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals.',
+    description='Lottery Numbers fetches winning lottery numbers, bonus balls, draw dates, and jackpot amounts for major games. Specify Powerball, Mega Millions, EuroMillions, or Lotto Max to receive draw results with prize totals, and on paid plans the next draw's estimate and number frequency statistics from the last 100 draws.',
     author='APIVerve',
     author_email='hello@apiverve.com',
     url='https://apiverve.com/marketplace/lottery?utm_source=pypi&utm_medium=referral&utm_content=homepage',

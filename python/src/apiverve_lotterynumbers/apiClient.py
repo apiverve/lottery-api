@@ -25,7 +25,8 @@ class LotteryAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "numbers": {"type": "string", "required": True},
-        "date": {"type": "string", "required": False, "format": "date"}
+        "date": {"type": "string", "required": False, "format": "date"},
+        "stats": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns
